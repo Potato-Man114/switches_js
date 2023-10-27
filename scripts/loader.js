@@ -9,20 +9,54 @@
 MyGame.loader = (function() {
     'use strict';
     let scriptOrder = [
+        // -- constants --
         // -- utils --
         {
-            scripts: ['scripts/utils/lodash.js'],
-            message: "lodash library loaded. See https://lodash.com/",
+            scripts: [
+                'scripts/utils/lodash.js',
+                'scripts/utils/random.js',
+                'scripts/utils/input.js',
+            ],
+            message: "utils loaded",
             onComplete: null
         },
-
-
         // -- entity --
         {
             scripts: ['scripts/entity.js'],
             message: "entity.js loaded.",
             onComplete: null
         },
+        // -- levels --
+
+        // -- components --
+        
+        // -- rendering --
+
+        // -- systems --
+        {
+            scripts: ['scripts/systems/input.js'],
+            message: "entity.js loaded",
+            onComplete: null
+        },
+        // -- game model --
+        {
+            scripts: ['scripts/game_model.js'],
+            message: "game model loaded",
+            onComplete: null
+        },
+        // -- screen manager --
+        {
+            scripts: ['scripts/screens/manager.js'],
+            message: "screen manager loaded.",
+            onComplete: null,
+        },
+        // -- screens --
+        {
+            scripts: ['scripts/screens/gameplay.js'],
+            message: "screens loaded",
+            onComplete: null,
+        }
+
         
     ];
 

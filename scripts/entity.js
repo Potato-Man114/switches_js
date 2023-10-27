@@ -20,7 +20,7 @@ let Entity = (function() {
             delete that.components[c.name];
         }
 
-        that.clone = function() {
+        that.clone = () => {
             let newEntity = api.createEntity(that.id);
             for (let componentId in that.components) {
                 let component = that.components[componentId];
@@ -41,6 +41,10 @@ let EntityFactory = (function() {
 
 
     //Factory for easy creation of many different entities. May separate into differnt file later.
+
+    api.createNormalSwitch = (status) => {
+        //TODO: this
+    }
 
     return api;
 })

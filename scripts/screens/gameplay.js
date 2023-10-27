@@ -1,4 +1,4 @@
-MyGame.screens['gameplay'] = (function(screenManager, graphics, input)) {
+MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
     'use strict'
 
     let mouse = input.Mouse(); // mouse controlled game.
@@ -23,4 +23,32 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input)) {
         keyboard.update(elapsedTime);
         //TODO: mouse as well?
     }
-}
+
+    function gameLoop(time) {
+        update(time - previousTimeStamp);
+        previousTimeStamp = time;
+
+        if (!cancelNextRequest) {
+            requestAnimationFrame(gameLoop);
+        }
+        else {
+            //TODO: stop the audio
+        }
+    }
+
+    function run() {
+        model = GameModel(MyGame.levels[MyGame.activeLevel]);
+
+        //TODO: keboard command to return to main menu.
+
+        cancelNextRequest = false;
+        previousTimeStamp = performance.now();
+        requestAnimationFrame(gameLoop);
+    }
+
+    return {
+        initialize,
+        run
+    };
+
+}(MyGame.screenManager, MyGame.graphics, MyGame.input));
