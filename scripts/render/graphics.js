@@ -1,4 +1,3 @@
-//TODO: doc comments
 MyGame.graphics = (function() {
   'use strict';
 

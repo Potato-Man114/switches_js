@@ -1,14 +1,13 @@
 MyGame.components.Position = function(x, y) {
-  'use strict';
+    'use strict';
 
-  let that = {
-    get name() { return 'position'; },
-    get x() { return x; },
-    get y() { return y; },
-    set x(newX) { x = newX; },
-    set y(newY) { y = newY; },
-  };
+    let that = {
+        get name() { return 'position'; },
+        get x() { return x; },
+        get y() { return y; },
+        set x(newX) { x = newX; },
+        set y(newY) { y = newY; },
+    };
 
-  return that;
-  
+    return that;
 }

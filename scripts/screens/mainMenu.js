@@ -1,35 +1,22 @@
 MyGame.screens['main-menu'] = (function (screenManager) {
-  'use strict';
+    'use strict';
 
-  function initialize() {
-    document.getElementById('level-select-button').addEventListener(
-      'click',
-      () => {
-        screenManager.showScreen('level-select');
-      }
-    );
+    function initialize() {
+        document.getElementById('start-test-button').addEventListener(
+            'click',
+            () => {
+                screenManager.showScreen('gameplay');
+            }
+        );
+    }
 
-    document.getElementById('controls-button').addEventListener(
-      'click',
-      () => {
-        screenManager.showScreen('controls');
-      }
-    );
+    function run() {
+        //nothin much
+    }
 
-    document.getElementById('credits-button').addEventListener(
-      'click',
-      () => {
-        screenManager.showScreen('credits');
-      }
-    )
-  }
+    return {
+        initialize,
+        run
+    }
 
-  function run() {
-    //not much to do
-  }
-
-  return {
-    initialize,
-    run
-  }
 }(MyGame.screenManager));

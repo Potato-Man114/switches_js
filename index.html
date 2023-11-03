@@ -2,62 +2,28 @@
 <html lang = "en-US">
 <head>
   <meta charset="UTF-8">
-  <title>Big Blue Is You</title>
-  <link rel="stylesheet" type="text/css" href="styles/bbiy.css">
+  <title>Switches!</title>
+  <link rel="stylesheet" type="text/css" href="styles/switches.css">
 </head>
 <!-- <body onload="MyGame.screenManager.initialize();"> -->
 <body>
   <div id="game">
     <div id="main-menu" class="screen">
-      <h1 id="title">Big Blue is You</h1>
+      <h1 id="title">Switches!</h1>
       <ul class="menu">
-        <li><button id="level-select-button">Level Select</button></li>
-        <li><button id="controls-button">Controls</button></li>
-        <li><button id="credits-button">Credits</button></li>
+        <!-- <li><button id="level-select-button">Level Select</button></li> -->
+        <li><button id="start-test-button">Start Test</button></li>
       </ul>
     </div>
     <div id="gameplay" class="screen">
       <canvas id="canvas" height="700px" width="700px"></canvas>
     </div>
-    <div id="level-select" class="screen">
+    <!-- <div id="level-select" class="screen">
       <h1>Level Select</h1>
       <ul class="menu" id="level-select-menu">
         <li><button id="level-select-back-button">Main Menu</button></li>
       </ul>
-    </div>
-    <div id="controls" class="screen">
-      <h1>Controls</h1>
-      <ul class="menu">
-        <li><button id="controls-back-button">Main Menu</button></li>
-        <li><button id="controls-restore-defaults">Restore Defaults</button></li>
-      </ul>
-      <p>Select a command you would like to map a key for, then press the key you want. </p>
-      <ul class="menu" id="controls-buttons">
-      </ul>
-    </div>
-    <div id="credits" class="screen">
-      <h1>Credits</h1>
-      <ul class="menu">
-        <li><button id="credits-back-button">Main Menu</button></li>
-      </ul>
-      <ul>
-        <li>Director: Matthew Hill</li>
-        <li>Program Coordinator: Matthew Hill</li>
-        <li>Programmer: Matthew Hill</li>
-        <li>Play Testers: </li>
-          <ul>
-            <li>Matthew Hill</li>
-            <li>Chloé Hill</li>
-          </ul>
-        <li>Sounds:
-          <ul>
-            <li><a href="https://freesound.org/people/audiomirage/sounds/684540/">House of the Rising Sun by Steven F Allen, converted to MP3</a></li>
-            <li><a href="http://noproblo.dayjo.org/ZeldaSounds/">The Legend of Zelda sound effects</a></li>
-            <li><a href="https://soundboardguy.com/sounds/minecraft-footsteps/">Minecraft Steps</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    </div> -->
   </div>
 
   <script>
@@ -68,7 +34,26 @@
       render: {},
       constants: {},
       assets: {},
-      levels: {}
+      levels: {},
+      utils: {},
+      pubsub: {
+        subscribers: {},
+        publish(event, data) {
+          if (!subscribers[event]) return;
+          subscribers[event].forEach(subscriberCallback => subscriberCallback(data));
+        },
+        subscribe(event, callback) {
+          if (!subscribers[event]) {
+            subscribers[event] = [];
+          }
+          let index = subscribers[event].push(callback) - 1;
+          return {
+            unsubscribe() {
+              subscribers[event].splice(index, 1);
+            }
+          };
+        },
+      } 
     }
   </script>
 
