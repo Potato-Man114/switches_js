@@ -5,6 +5,9 @@ MyGame.input = (function() {
         let that = {}
         //TODO: create functions for button press and (maybe) update?
         
+        that.update = (elapsedTime) => {
+            //TODO: this
+        }
         
         //window.addEventListener('onclick', mousePress); //TODO: is this right?
         return that;
@@ -12,7 +15,21 @@ MyGame.input = (function() {
 
     }
 
+    function Keyboard() {
+        let that = {}
+
+        //TODO: this
+
+        that.update = (elapsedTime) => {
+            //TODO: this
+        }
+
+        return that;
+
+    }
+
     return {
-        Mouse
+        Mouse,
+        Keyboard
     }
 }());

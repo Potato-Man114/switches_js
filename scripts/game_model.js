@@ -4,15 +4,13 @@ function GameModel(level_data) {
     let entities = [];
 
     function initializeLevel(level_data) {
+        entities.length = 0;
         //TODO: level_data has no meaning for now. Change that.
         //TODO: loading levels
+        //TODO: figure out how to store switch data
         
 
-        //TODO: initialize a NORMAL_ON Switch
-        //TODO: figure out how to store switch data
-        entities.length = 0;
-
-        entities.push(EntityFactory.createNormalSwitch(true));
+        entities.push(EntityFactory.createNormalSwitch({x: 4, y: 4}, level_data.size, false));
 
         //initialize any systems that have an "initialize" method
         // for (system of MyGame.systems) {
@@ -33,9 +31,10 @@ function GameModel(level_data) {
     }
 
     function update(elapsedTime) {
-        console.log("update is working.");
+        // console.log("update is working.");
         //It's update, it goes through the updates of each of the systems in the correct order.
         //Make sure the pubsub model is levereged.
+        MyGame.systems.Render.update(elapsedTime, entities);
     }
 
     initialize();

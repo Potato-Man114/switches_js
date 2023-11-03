@@ -22,6 +22,7 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
     function update(elapsedTime) {
         keyboard.update(elapsedTime);
         //TODO: mouse as well?
+        model.update(elapsedTime);        
     }
 
     function gameLoop(time) {
@@ -37,8 +38,15 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
     }
 
     function run() {
-        model = GameModel(MyGame.levels[MyGame.activeLevel]);
-
+        //TODO: actually load level data
+        model = GameModel(
+            {
+                size: {
+                    x: 15, y: 15
+                }
+            }
+        ); 
+            
         //TODO: keboard command to return to main menu.
 
         cancelNextRequest = false;

@@ -33,18 +33,28 @@ let Entity = (function() {
         
         return that;
     }
+
+    return api;
 }());
+
+//Factory for easy creation of many different entities. May separate into differnt file later.
 
 let EntityFactory = (function() {
     'use scrict';
     let api = {};
 
-
-    //Factory for easy creation of many different entities. May separate into differnt file later.
-
-    api.createNormalSwitch = (status) => {
+    api.createNormalSwitch = (position, gridSize, status) => {
         //TODO: this
+        let entity = Entity.createEntity();
+        entity.addComponent(MyGame.components.Position(position.x, position.y));
+        entity.addComponent(MyGame.components.Sprite({
+            image: MyGame.assets["normal-off"],
+            ready: true,
+            spriteSize: MyGame.utils.getSpriteSize(gridSize),
+            spriteCenter: MyGame.utils.gridPositionToPixelPosition(position, gridSize).center,
+        }));
+        return entity;
     }
 
     return api;
-})
+}());

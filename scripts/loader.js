@@ -16,6 +16,7 @@ MyGame.loader = (function() {
                 'scripts/utils/lodash.js',
                 'scripts/utils/random.js',
                 'scripts/utils/input.js',
+                'scripts/utils/utils.js',
             ],
             message: "utils loaded",
             onComplete: null
@@ -29,12 +30,31 @@ MyGame.loader = (function() {
         // -- levels --
 
         // -- components --
+        {
+            scripts: [
+                'scripts/components/position.js',
+                'scripts/components/sprite.js',
+            ],
+            message: "components loaded",
+            onComplete: null,
+        },
         
         // -- rendering --
-
+        {
+            scripts: [
+                'scripts/render/graphics.js',
+                'scripts/render/background.js',
+            ],
+            message: "rendering scripts loaded",
+            onComplete: null,
+        },
         // -- systems --
         {
-            scripts: ['scripts/systems/input.js'],
+            scripts: [
+                'scripts/systems/input.js',
+                'scripts/systems/renderSprite.js',
+                'scripts/systems/render.js',
+            ],
             message: "entity.js loaded",
             onComplete: null
         },
@@ -52,7 +72,10 @@ MyGame.loader = (function() {
         },
         // -- screens --
         {
-            scripts: ['scripts/screens/gameplay.js'],
+            scripts: [
+                'scripts/screens/gameplay.js',
+                'scripts/screens/mainMenu.js',
+            ],
             message: "screens loaded",
             onComplete: null,
         }
@@ -61,14 +84,10 @@ MyGame.loader = (function() {
     ];
 
     let assetOrder = [
-        // {
-        //     key: 'levels-all',
-        //     source: '/assets/levels/levels-all.bbiy'
-        // }, 
-        // {
-        //     key: 'BigBlue',
-        //     source: '/assets/images/BigBlue.png'
-        // }, 
+        {
+            key: 'normal-off',
+            source: '/assets/NORMAL_OFF.png'
+        }, 
     ];
 
     //------------------------------------------------------------------
