@@ -1,0 +1,117 @@
+{
+    "level_size": [10, 10],
+    "level_name": "test_1",
+    "objects": [
+        {
+            "pos": [1, 0],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": true
+            }
+        },
+        {
+            "pos": [2, 0],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [3, 0],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "DIRECTIONAL",
+                "clickable": false,
+                "direction": "RIGHT"
+            }
+        },
+        {
+            "pos": [7, 0],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [8, 0],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": true
+            }
+        },
+        {
+            "pos": [0, 1],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [7, 1],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [1, 2],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [2, 2],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": true,
+                "switch_type": "NORMAL",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [8, 2],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": false
+            }
+        },
+        {
+            "pos": [9, 2],
+            "type": "SWITCH",
+            "attributes": {
+                "is_on": false,
+                "is_goal": true,
+                "switch_type": "NORMAL",
+                "clickable": false
+            }
+        }
+    ]
+}
