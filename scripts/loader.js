@@ -84,10 +84,16 @@ MyGame.loader = (function() {
     ];
 
     let assetOrder = [
+        // images
         {
             key: 'normal-off',
-            source: '/assets/NORMAL_OFF.png'
+            source: '/assets/images/NORMAL_OFF.png'
         }, 
+        // levels
+        {
+            key: 'level_test_1',
+            source: '/assets/levels/test_1.json'
+        }
     ];
 
     //------------------------------------------------------------------
@@ -170,7 +176,7 @@ MyGame.loader = (function() {
 
         if (fileExtension) {
             xhr.open('GET', source, true);
-            xhr.responseType = (fileExtension === 'txt' || fileExtension === 'bbiy') ? 'text' : 'blob';
+            xhr.responseType = (fileExtension === 'txt' || fileExtension === 'json') ? 'text' : 'blob';
 
             xhr.onload = function() {
                 let asset = null;
@@ -182,7 +188,7 @@ MyGame.loader = (function() {
                         asset.preload = "auto";
                     } else if (fileExtension === 'txt') {
                         if (onSuccess) { onSuccess(xhr.responseText); }
-                    } else if (fileExtension === 'bbiy') {
+                    } else if (fileExtension === 'json') {
                         if (onSuccess) { onSuccess(xhr.responseText); }
                     }
                     else {

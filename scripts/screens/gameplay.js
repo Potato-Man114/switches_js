@@ -40,11 +40,7 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
     function run() {
         //TODO: actually load level data
         model = GameModel(
-            {
-                size: {
-                    x: 15, y: 15
-                }
-            }
+            MyGame.levels //TODO: this is temporary for testing level loading.
         ); 
             
         //TODO: keboard command to return to main menu.

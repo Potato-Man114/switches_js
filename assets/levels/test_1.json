@@ -1,6 +1,6 @@
 {
-    "level_size": [10, 10],
-    "level_name": "test_1",
+    "size": [10, 10],
+    "name": "test_1",
     "objects": [
         {
             "type": "SWITCH",
