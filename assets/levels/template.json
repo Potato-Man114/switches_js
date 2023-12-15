@@ -1,0 +1,22 @@
+[
+    {
+        "level_size": ["x", "y"],
+        "level_name": "name",
+        "objects": [
+            {
+                "pos": ["x", "y"],
+                "type": "empty" | "wall" | "switch" | etc..,
+                "attributes": {
+                    "is_on": true,
+                    "is_goal": true,
+                    "locks": [],
+                    "keys": [],
+                    "switch_type": "cascade",
+                    "clickable": false
+                }
+            },
+            {},
+            {}
+        ]
+    }
+]

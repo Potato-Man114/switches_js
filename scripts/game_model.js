@@ -8,9 +8,23 @@ function GameModel(level_data) {
         //TODO: level_data has no meaning for now. Change that.
         //TODO: loading levels
         //TODO: figure out how to store switch data
-        
+        for (var object of level_data["objects"]) {
+            let entity = undefined;
+            switch (object["type"]) {
+                case "SWITCH":
+                    entity = EntityFactory.createSwitch(object["attributes"], level_data.size);
+                    break;
+                default:
+                    console.log("Unkown object type");
+                    console.log(object["type"]);
+                    break;
+            }
+            if (entity) {
+                entities.push(entity);
+            }
+        }
 
-        entities.push(EntityFactory.createNormalSwitch({x: 4, y: 4}, level_data.size, false));
+        // entities.push(EntityFactory.createNormalSwitch({x: 4, y: 4}, level_data.size, false));
 
         //initialize any systems that have an "initialize" method
         // for (system of MyGame.systems) {
