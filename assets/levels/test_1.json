@@ -1,11 +1,11 @@
 {
-    "size": [10, 10],
+    "size": {"x": 10, "y": 10},
     "name": "test_1",
     "objects": [
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [1, 0],
+                "pos": {"x": 1, "y": 0},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -15,7 +15,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [2, 0],
+                "pos": {"x": 2, "y": 0},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -25,7 +25,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [3, 0],
+                "pos": {"x": 3, "y": 0},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "DIRECTIONAL",
@@ -36,7 +36,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [7, 0],
+                "pos": {"x": 7, "y": 0},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -46,7 +46,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [8, 0],
+                "pos": {"x": 8, "y": 0},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -56,7 +56,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [0, 1],
+                "pos": {"x": 0, "y": 1},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -66,7 +66,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [7, 1],
+                "pos": {"x": 7, "y": 1},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -76,7 +76,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [1, 2],
+                "pos": {"x": 1, "y": 2},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -86,7 +86,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [2, 2],
+                "pos": {"x": 2, "y": 2},
                 "is_on": false,
                 "is_goal": true,
                 "switch_type": "NORMAL",
@@ -96,7 +96,7 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [8, 2],
+                "pos": {"x": 8, "y": 2},
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
@@ -106,10 +106,10 @@
         {
             "type": "SWITCH",
             "attributes": {
-                "pos": [9, 2],
+                "pos": {"x": 9, "y": 2},
                 "is_on": false,
                 "is_goal": true,
-                "switch_type": "NORMAL",
+                "switch_type": "GOAL",
                 "clickable": false
             }
         }

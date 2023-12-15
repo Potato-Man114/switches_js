@@ -18,7 +18,8 @@ let mimeTypes = {
     '.jpg': 'image/jpeg',
     '.mp3': 'audio/mpeg3',
     '.txt': 'text/html',
-    '.swt': 'text/html'
+    '.swt': 'text/html',
+    '.json': 'text/json',
 };
 const port = 3000;
 

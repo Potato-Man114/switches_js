@@ -56,5 +56,49 @@ let EntityFactory = (function() {
         return entity;
     }
 
+    api.createSwitch = (attributes, gridSize) => {
+        //basic checks
+        if (!attributes.hasOwnProperty("pos") || !attributes.hasOwnProperty("switch_type")) {
+            return undefined;
+        }
+
+        let entity = Entity.createEntity();
+        entity.addComponent(MyGame.components.Position(attributes.pos.x, attributes.pos.y));
+
+        //TODO: document this so this pattern can be enforced.
+        let sprite_name = "" + attributes.switch_type.toLowerCase();
+        sprite_name = attributes.direction ? sprite_name + "_" + attributes.direction.toLowerCase() : sprite_name;
+        sprite_name = attributes.is_on ? sprite_name + "_on" : sprite_name + "_off";
+        sprite_name = attributes.clickable ? sprite_name + "_clickable" : sprite_name;
+        if (!!MyGame.assets[sprite_name]) {
+            entity.addComponent(MyGame.components.Sprite({
+                image: MyGame.assets[sprite_name],
+                ready: true,
+                spriteSize: MyGame.utils.getSpriteSize(gridSize),
+                spriteCenter: MyGame.utils.gridPositionToPixelPosition(attributes.pos, gridSize).center,
+            }));
+        }
+        else {
+            console.log("could not find a sprite for the object:");
+            console.log(attributes);
+            console.log(sprite_name);
+            return undefined;
+        }
+        entity.addComponent(MyGame.components.Activateable(attributes.is_on));
+        if (attributes.is_goal) {
+            entity.addComponent(MyGame.components.Goal());
+        }
+        if (attributes.clickable) {
+            entity.addComponent(MyGame.components.Clickable());
+        }
+
+        entity.addComponent(MyGame.components.SwitchType(attributes.switch_type));
+        if (attributes.direction) {
+            entity.addComponent(MyGame.components.Directional(attributes.direction));
+        }
+
+        return entity;
+    }
+
     return api;
 }());

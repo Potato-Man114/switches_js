@@ -32,8 +32,13 @@ MyGame.loader = (function() {
         // -- components --
         {
             scripts: [
+                'scripts/components/activateable.js',
+                'scripts/components/clickable.js',
+                'scripts/components/directional.js',
+                'scripts/components/goal.js',
                 'scripts/components/position.js',
                 'scripts/components/sprite.js',
+                'scripts/components/switch_type.js',
             ],
             message: "components loaded",
             onComplete: null,
@@ -56,6 +61,14 @@ MyGame.loader = (function() {
                 'scripts/systems/render.js',
             ],
             message: "entity.js loaded",
+            onComplete: null
+        },
+        // -- level loader --
+        {
+            scripts: [
+                'scripts/load_levels.js',
+            ],
+            message: "load_levels.js loaded",
             onComplete: null
         },
         // -- game model --
@@ -86,9 +99,183 @@ MyGame.loader = (function() {
     let assetOrder = [
         // images
         {
-            key: 'normal-off',
+            key: 'cascade_off_clickable',
+            source: '/assets/images/CASCADE_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'cascade_off',
+            source: '/assets/images/CASCADE_OFF.png'
+        }, 
+        {
+            key: 'cascade_on_clickable',
+            source: '/assets/images/CASCADE_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'cascade_on',
+            source: '/assets/images/CASCADE_ON.png'
+        }, 
+        {
+            key: 'directional_down_off_clickable',
+            source: '/assets/images/DIRECTIONAL_DOWN_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_down_off',
+            source: '/assets/images/DIRECTIONAL_DOWN_OFF.png'
+        }, 
+        {
+            key: 'directional_down_on_clickable',
+            source: '/assets/images/DIRECTIONAL_DOWN_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_down_on',
+            source: '/assets/images/DIRECTIONAL_DOWN_ON.png'
+        }, 
+         
+        {
+            key: 'directional_left_off_clickable',
+            source: '/assets/images/DIRECTIONAL_LEFT_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_left_off',
+            source: '/assets/images/DIRECTIONAL_LEFT_OFF.png'
+        }, 
+        {
+            key: 'directional_left_on_clickable',
+            source: '/assets/images/DIRECTIONAL_LEFT_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_left_on',
+            source: '/assets/images/DIRECTIONAL_LEFT_ON.png'
+        }, 
+         
+        {
+            key: 'directional_right_off_clickable',
+            source: '/assets/images/DIRECTIONAL_RIGHT_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_right_off',
+            source: '/assets/images/DIRECTIONAL_RIGHT_OFF.png'
+        }, 
+        {
+            key: 'directional_right_on_clickable',
+            source: '/assets/images/DIRECTIONAL_RIGHT_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_right_on',
+            source: '/assets/images/DIRECTIONAL_RIGHT_ON.png'
+        }, 
+         
+        {
+            key: 'directional_up_off_clickable',
+            source: '/assets/images/DIRECTIONAL_UP_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_up_off',
+            source: '/assets/images/DIRECTIONAL_UP_OFF.png'
+        }, 
+        {
+            key: 'directional_up_on_clickable',
+            source: '/assets/images/DIRECTIONAL_UP_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'directional_up_on',
+            source: '/assets/images/DIRECTIONAL_UP_ON.png'
+        }, 
+
+        {
+            key: 'distance_off_clickable',
+            source: '/assets/images/DISTANCE_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'distance_off',
+            source: '/assets/images/DISTANCE_OFF.png'
+        }, 
+        {
+            key: 'distance_on_clickable',
+            source: '/assets/images/DISTANCE_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'distance_on',
+            source: '/assets/images/DISTANCE_ON.png'
+        }, 
+        {
+            key: 'goal_off_clickable',
+            source: '/assets/images/GOAL_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'goal_off',
+            source: '/assets/images/GOAL_OFF.png'
+        }, 
+        {
+            key: 'goal_on_clickable',
+            source: '/assets/images/GOAL_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'goal_on',
+            source: '/assets/images/GOAL_ON.png'
+        }, 
+        {
+            key: 'normal_off_clickable',
+            source: '/assets/images/NORMAL_OFF_CLICKABLE.png'
+        }, 
+        {
+            key: 'normal_off',
             source: '/assets/images/NORMAL_OFF.png'
         }, 
+        {
+            key: 'normal_on_clickable',
+            source: '/assets/images/NORMAL_ON_CLICKABLE.png'
+        }, 
+        {
+            key: 'normal_on',
+            source: '/assets/images/NORMAL_ON.png'
+        }, 
+        //-----------------------------------
+        {
+            key: 'wall',
+            source: '/assets/images/WALL.png'
+        }, 
+        {
+            key: 'key_blue',
+            source: '/assets/images/KEY_BLUE.png'
+        }, 
+        {
+            key: 'key_green',
+            source: '/assets/images/KEY_GREEN.png'
+        }, 
+        {
+            key: 'key_purple',
+            source: '/assets/images/KEY_PURPLE.png'
+        }, 
+        {
+            key: 'key_red',
+            source: '/assets/images/KEY_RED.png'
+        }, 
+        {
+            key: 'key_yellow',
+            source: '/assets/images/KEY_YELLOW.png'
+        }, 
+        {
+            key: 'lock_blue',
+            source: '/assets/images/LOCK_BLUE.png'
+        }, 
+        {
+            key: 'lock_green',
+            source: '/assets/images/LOCK_GREEN.png'
+        }, 
+        {
+            key: 'lock_purple',
+            source: '/assets/images/LOCK_PURPLE.png'
+        }, 
+        {
+            key: 'lock_red',
+            source: '/assets/images/LOCK_RED.png'
+        }, 
+        {
+            key: 'lock_yellow',
+            source: '/assets/images/LOCK_YELLOW.png'
+        }, 
+        
         // levels
         {
             key: 'level_test_1',
@@ -176,8 +363,8 @@ MyGame.loader = (function() {
 
         if (fileExtension) {
             xhr.open('GET', source, true);
-            xhr.responseType = (fileExtension === 'txt' || fileExtension === 'json') ? 'text' : 'blob';
-
+            xhr.responseType = (fileExtension === 'txt') ? 'text' : 'blob';
+            xhr.responseType = (fileExtension === 'json') ? 'text' : xhr.responseType;
             xhr.onload = function() {
                 let asset = null;
                 if (xhr.status === 200) {
@@ -189,7 +376,7 @@ MyGame.loader = (function() {
                     } else if (fileExtension === 'txt') {
                         if (onSuccess) { onSuccess(xhr.responseText); }
                     } else if (fileExtension === 'json') {
-                        if (onSuccess) { onSuccess(xhr.responseText); }
+                        if (onSuccess) { onSuccess(JSON.parse(xhr.response)); }
                     }
                     else {
                         if (onError) { onError('Unknown file extension: ' + fileExtension); }
