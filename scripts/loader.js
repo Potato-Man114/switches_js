@@ -17,6 +17,8 @@ MyGame.loader = (function() {
                 'scripts/utils/random.js',
                 'scripts/utils/input.js',
                 'scripts/utils/utils.js',
+                'scripts/utils/pubsub.js',
+                'scripts/utils/constants.js',
             ],
             message: "utils loaded",
             onComplete: null

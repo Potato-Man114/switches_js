@@ -38,6 +38,7 @@ function GameModel(level_data) {
 
     function initialize() {
         initializeLevel(level_data);
+        MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => console.log(data));
         //TODO: begin background music.
     }
 
@@ -47,6 +48,7 @@ function GameModel(level_data) {
         //Make sure the pubsub model is levereged.
         MyGame.systems.Input.update(elapsedTime, entities);
         MyGame.systems.Render.update(elapsedTime, entities);
+
         
     }
 
