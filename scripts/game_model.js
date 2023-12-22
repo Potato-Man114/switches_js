@@ -38,7 +38,11 @@ function GameModel(level_data) {
 
     function initialize() {
         initializeLevel(level_data);
-        MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => console.log(data));
+        MyGame.systems.ToggleSwitch.initialize();
+        // MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => console.log(MyGame.utils.viewPortPositionToPixelPosition(data)));
+        // MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => console.log(
+        //     MyGame.utils.pixelPositionToGridPosition(MyGame.utils.viewPortPositionToPixelPosition(data), level_data.size)
+        // ));
         //TODO: begin background music.
     }
 
@@ -47,8 +51,8 @@ function GameModel(level_data) {
         //It's update, it goes through the updates of each of the systems in the correct order.
         //Make sure the pubsub model is levereged.
         MyGame.systems.Input.update(elapsedTime, entities);
+        MyGame.systems.ToggleSwitch.update(elapsedTime, entities, level_data.size);
         MyGame.systems.Render.update(elapsedTime, entities);
-
         
     }
 

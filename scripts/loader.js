@@ -62,6 +62,7 @@ MyGame.loader = (function() {
                 'scripts/systems/renderSprite.js',
                 'scripts/systems/render.js',
                 'scripts/systems/input.js',
+                'scripts/systems/toggle_switch.js',
             ],
             message: "entity.js loaded",
             onComplete: null
