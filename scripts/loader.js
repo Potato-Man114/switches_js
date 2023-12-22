@@ -59,6 +59,7 @@ MyGame.loader = (function() {
                 'scripts/systems/input.js',
                 'scripts/systems/renderSprite.js',
                 'scripts/systems/render.js',
+                'scripts/systems/input.js',
             ],
             message: "entity.js loaded",
             onComplete: null

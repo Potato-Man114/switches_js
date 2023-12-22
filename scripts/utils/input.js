@@ -2,14 +2,30 @@ MyGame.input = (function() {
     'use strict';
 
     function Mouse() {
-        let that = {}
-        //TODO: create functions for button press and (maybe) update?
-        
-        that.update = (elapsedTime) => {
-            //TODO: this
+        let that = {
+            actions: {},
+            handlers: [],
+        };
+
+        function mousedown(e) {
+            that.actions['mousedown'] = {x: e.clientX, y: e.clientY};
+        }        
+
+        that.registerCommand = (action, handler)  => {
+            that.handlers.push({ action: action, handler: handler});
         }
         
-        //window.addEventListener('onclick', mousePress); //TODO: is this right?
+        that.unregisterCommand = (action) => {
+            that.handlers.splice(that.handlers.findIndex((h) => {h.action == action}), 1);
+        }
+
+        that.update = (elapsedTime) => {
+            for (let handler = 0; hanlder < that.handlers.length; handler++) {
+                that.handlers[handler].handler(elapsedTime, that.actions[that.handlers[handler].action]);
+            }
+        }
+        
+        window.addEventListener('mousedown', mousedown); //TODO: is this right?
         return that;
 
 
