@@ -234,5 +234,17 @@ MyGame.graphics = (function() {
     get: () => canvas.height
   });
 
+  Object.defineProperty(that, 'clientWidth', {
+    get: () => canvas.clientWidth
+  });
+
+  Object.defineProperty(that, "clientHeight", {
+    get: () => canvas.clientHeight
+  });
+
+  Object.defineProperty(that, 'boudingRect', {
+    get: () => canvas.getBoundingClientRect()
+  });
+
   return that;
 }());

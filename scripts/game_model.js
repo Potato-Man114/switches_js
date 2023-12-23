@@ -5,9 +5,6 @@ function GameModel(level_data) {
 
     function initializeLevel(level_data) {
         entities.length = 0;
-        //TODO: level_data has no meaning for now. Change that.
-        //TODO: loading levels
-        //TODO: figure out how to store switch data
         for (var object of level_data["objects"]) {
             let entity = undefined;
             switch (object["type"]) {
@@ -41,6 +38,11 @@ function GameModel(level_data) {
 
     function initialize() {
         initializeLevel(level_data);
+        for (let system in MyGame.systems) {
+            if (Object.keys(MyGame.systems[system]).includes("initialize")) {
+                MyGame.systems[system].initialize();
+            }
+        }
         //TODO: begin background music.
     }
 
@@ -48,7 +50,11 @@ function GameModel(level_data) {
         // console.log("update is working.");
         //It's update, it goes through the updates of each of the systems in the correct order.
         //Make sure the pubsub model is levereged.
+        MyGame.systems.Input.update(elapsedTime, entities);
+        MyGame.systems.ToggleSwitch.update(elapsedTime, entities, level_data.size);
+        MyGame.systems.SwitchSprite.update(elapsedTime, entities, level_data.size);
         MyGame.systems.Render.update(elapsedTime, entities);
+        
     }
 
     initialize();

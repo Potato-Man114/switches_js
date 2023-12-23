@@ -17,6 +17,8 @@ MyGame.loader = (function() {
                 'scripts/utils/random.js',
                 'scripts/utils/input.js',
                 'scripts/utils/utils.js',
+                'scripts/utils/pubsub.js',
+                'scripts/utils/constants.js',
             ],
             message: "utils loaded",
             onComplete: null
@@ -59,6 +61,9 @@ MyGame.loader = (function() {
                 'scripts/systems/input.js',
                 'scripts/systems/renderSprite.js',
                 'scripts/systems/render.js',
+                'scripts/systems/input.js',
+                'scripts/systems/toggle_switch.js',
+                'scripts/systems/switch_sprite.js',
             ],
             message: "entity.js loaded",
             onComplete: null
