@@ -38,11 +38,11 @@ function GameModel(level_data) {
 
     function initialize() {
         initializeLevel(level_data);
-        MyGame.systems.ToggleSwitch.initialize();
-        // MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => console.log(MyGame.utils.viewPortPositionToPixelPosition(data)));
-        // MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => console.log(
-        //     MyGame.utils.pixelPositionToGridPosition(MyGame.utils.viewPortPositionToPixelPosition(data), level_data.size)
-        // ));
+        for (let system in MyGame.systems) {
+            if (Object.keys(MyGame.systems[system]).includes("initialize")) {
+                MyGame.systems[system].initialize();
+            }
+        }
         //TODO: begin background music.
     }
 
@@ -52,6 +52,7 @@ function GameModel(level_data) {
         //Make sure the pubsub model is levereged.
         MyGame.systems.Input.update(elapsedTime, entities);
         MyGame.systems.ToggleSwitch.update(elapsedTime, entities, level_data.size);
+        MyGame.systems.SwitchSprite.update(elapsedTime, entities, level_data.size);
         MyGame.systems.Render.update(elapsedTime, entities);
         
     }

@@ -23,7 +23,8 @@ MyGame.systems.ToggleSwitch = (function() {
                 }
                 let pos = entity.components.position;
                 if (pos.x == clicked_pos.x && pos.y == clicked_pos.y) {
-                    console.log(entity);
+                    entity.components.activateable.toggle();
+                    MyGame.pubsub.publish(MyGame.constants.Events.switchUpdated, entity);
                 }
             }
         }

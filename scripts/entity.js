@@ -56,6 +56,14 @@ let EntityFactory = (function() {
         return entity;
     }
 
+    api.getSwitchSpriteName = (switch_type, is_on, clickable, direction) => {
+        let sprite_name = "" + switch_type.toLowerCase();
+        sprite_name = direction ? sprite_name + "_" + direction.toLowerCase() : sprite_name;
+        sprite_name = is_on ? sprite_name + "_on" : sprite_name + "_off";
+        sprite_name = clickable ? sprite_name + "_clickable" : sprite_name;
+        return sprite_name;
+    }
+
     api.createSwitch = (attributes, gridSize) => {
         //basic checks
         if (!attributes.hasOwnProperty("pos") || !attributes.hasOwnProperty("switch_type")) {
@@ -65,11 +73,8 @@ let EntityFactory = (function() {
         let entity = Entity.createEntity();
         entity.addComponent(MyGame.components.Position(attributes.pos.x, attributes.pos.y));
 
-        //TODO: document this so this pattern can be enforced.
-        let sprite_name = "" + attributes.switch_type.toLowerCase();
-        sprite_name = attributes.direction ? sprite_name + "_" + attributes.direction.toLowerCase() : sprite_name;
-        sprite_name = attributes.is_on ? sprite_name + "_on" : sprite_name + "_off";
-        sprite_name = attributes.clickable ? sprite_name + "_clickable" : sprite_name;
+        let sprite_name = api.getSwitchSpriteName(attributes.switch_type, attributes.is_on, attributes.clickable, attributes.direction);
+
         if (!!MyGame.assets[sprite_name]) {
             entity.addComponent(MyGame.components.Sprite({
                 image: MyGame.assets[sprite_name],
