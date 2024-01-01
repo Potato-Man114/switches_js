@@ -51,7 +51,7 @@ function GameModel(level_data) {
         //It's update, it goes through the updates of each of the systems in the correct order.
         //Make sure the pubsub model is levereged.
         MyGame.systems.Input.update(elapsedTime, entities);
-        MyGame.systems.ToggleSwitch.update(elapsedTime, entities, level_data.size);
+        MyGame.systems.ToggleSwitches.update(elapsedTime, entities, level_data.size);
         MyGame.systems.SwitchSprite.update(elapsedTime, entities, level_data.size);
         MyGame.systems.Render.update(elapsedTime, entities);
         
