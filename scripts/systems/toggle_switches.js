@@ -13,8 +13,49 @@ MyGame.systems.ToggleSwitches = (function() {
         MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => on_click(data));
     }
 
+    function get_adjacent_switches(current_switch, entities) {
+        let adjacent_switches = [];
+        for (let i = 0; i < entities.length; i++) {
+            let entity = entities[i];
+            if (!(entity.components.position && entity.components.activateable && entity.components.switch_type)) {
+                continue;
+            }
+            if (entity.components.position.x >= current_switch.components.position.x - 1 && 
+                entity.components.position.x <= current_switch.components.position.x + 1 &&
+                entity.components.position.y >= current_switch.components.position.y - 1 && 
+                entity.components.position.y <= current_switch.components.position.y + 1
+                ) {
+                    adjacent_switches.push(entity);
+                }
+        }
+        return adjacent_switches;
+    }
+
+    function get_cascading_switches(current_switch, already_found, entities) {
+        if (already_found.includes(current_switch)) {
+            console.log("here 1");
+            return;
+        }
+        if (!(current_switch.components.switch_type && current_switch.components.switch_type && current_switch.components.switch_type.type == MyGame.constants.SwitchTypes.CASCADE)) {
+            console.log("here 2");
+            return;
+        }
+        already_found.push(current_switch);
+        let adjacent_switches = get_adjacent_switches(current_switch, entities);
+        console.log(adjacent_switches);
+        for (let i = 0; i < adjacent_switches.length; i++) {
+            get_cascading_switches(adjacent_switches[i], already_found, entities);
+        }
+        
+    }
+
     function cascade(clicked_switch, entities) {
-        //TODO: this
+        let cascading_switches = [];
+        get_cascading_switches(clicked_switch, cascading_switches, entities);
+        for (let i = 0; i < cascading_switches.length; i++) {
+            cascading_switches[i].components.activateable.toggle();
+            MyGame.pubsub.publish(MyGame.constants.Events.switchUpdated, cascading_switches[i]);
+        }
     }
 
     function distance(clicked_switch, entities) {
