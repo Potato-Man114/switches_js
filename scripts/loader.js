@@ -285,6 +285,10 @@ MyGame.loader = (function() {
         {
             key: 'level_test_1',
             source: '/assets/levels/test_1.json'
+        },
+        {
+            key: 'level_test_hello',
+            source: '/assets/levels/test_normal.json'
         }
     ];
 

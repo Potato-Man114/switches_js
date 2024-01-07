@@ -19,7 +19,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -29,7 +29,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "DIRECTIONAL",
-                "clickable": false,
+                "clickable": true,
                 "direction": "RIGHT"
             }
         },
@@ -40,7 +40,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -60,7 +60,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -70,7 +70,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -80,7 +80,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -90,7 +90,7 @@
                 "is_on": false,
                 "is_goal": true,
                 "switch_type": "NORMAL",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -100,7 +100,7 @@
                 "is_on": false,
                 "is_goal": false,
                 "switch_type": "CASCADE",
-                "clickable": false
+                "clickable": true
             }
         },
         {
@@ -110,7 +110,7 @@
                 "is_on": false,
                 "is_goal": true,
                 "switch_type": "GOAL",
-                "clickable": false
+                "clickable": true
             }
         }
     ]
