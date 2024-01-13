@@ -8,7 +8,7 @@
         }, 
         {
             "type": "SWITCH",
-            "attributes": {"pos": {"x": 1, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+            "attributes": {"pos": {"x": 1, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
         }, 
         {
             "type": "SWITCH",
@@ -20,7 +20,7 @@
         }, 
         {
             "type": "SWITCH",
-            "attributes": {"pos": {"x": 3, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+            "attributes": {"pos": {"x": 3, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
         }, 
         {
             "type": "SWITCH",
@@ -28,7 +28,7 @@
         }, 
         {
             "type": "SWITCH",
-            "attributes": {"pos": {"x": 3, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+            "attributes": {"pos": {"x": 3, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
         },
 
         {
@@ -45,7 +45,7 @@
         },
         {
             "type": "SWITCH",
-            "attributes": {"pos": {"x": 6, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+            "attributes": {"pos": {"x": 6, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
         }, 
         {
             "type": "SWITCH",
@@ -57,15 +57,7 @@
         },
         {
             "type": "SWITCH",
-            "attributes": {"pos": {"x": 7, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
-        }, 
-        {
-            "type": "SWITCH",
-            "attributes": {"pos": {"x": 0, "y": 10}, "is_on": false, "is_goal": false, "switch_type": "DISTANCE", "clickable": true}
-        }, 
-        {
-            "type": "SWITCH",
-            "attributes": {"pos": {"x": 10, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "DISTANCE", "clickable": true}
+            "attributes": {"pos": {"x": 7, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
         }
     ]
 }

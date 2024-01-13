@@ -289,6 +289,22 @@ MyGame.loader = (function() {
         {
             key: 'level_test_hello',
             source: '/assets/levels/test_normal.json'
+        },
+        {
+            key: 'level_test_smile',
+            source: '/assets/levels/test_cascade.json'
+        },
+        {
+            key: 'level_test_dots',
+            source: '/assets/levels/test_distance.json'
+        },
+        {
+            key: 'level_test_lines',
+            source: '/assets/levels/test_directional.json'
+        },
+        {
+            key: 'level_test_goals',
+            source: '/assets/levels/test_goals.json'
         }
     ];
 
