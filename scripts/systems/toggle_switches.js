@@ -33,16 +33,13 @@ MyGame.systems.ToggleSwitches = (function() {
 
     function get_cascading_switches(current_switch, already_found, entities) {
         if (already_found.includes(current_switch)) {
-            console.log("here 1");
             return;
         }
         if (!(current_switch.components.switch_type && current_switch.components.switch_type && current_switch.components.switch_type.type == MyGame.constants.SwitchTypes.CASCADE)) {
-            console.log("here 2");
             return;
         }
         already_found.push(current_switch);
         let adjacent_switches = get_adjacent_switches(current_switch, entities);
-        console.log(adjacent_switches);
         for (let i = 0; i < adjacent_switches.length; i++) {
             get_cascading_switches(adjacent_switches[i], already_found, entities);
         }
