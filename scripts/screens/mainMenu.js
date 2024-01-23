@@ -2,10 +2,10 @@ MyGame.screens['main-menu'] = (function (screenManager) {
     'use strict';
 
     function initialize() {
-        document.getElementById('start-test-button').addEventListener(
+        document.getElementById('level-select-button').addEventListener(
             'click',
             () => {
-                screenManager.showScreen('gameplay');
+                screenManager.showScreen('level-select');
             }
         );
     }
