@@ -1,6 +1,6 @@
 {
     "size": {"x": 10, "y": 10},
-    "name": "hello",
+    "name": "test_directional",
     "objects": [
         {
             "type": "SWITCH",

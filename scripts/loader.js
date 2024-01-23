@@ -93,6 +93,7 @@ MyGame.loader = (function() {
             scripts: [
                 'scripts/screens/gameplay.js',
                 'scripts/screens/mainMenu.js',
+                'scripts/screens/level_select.js'
             ],
             message: "screens loaded",
             onComplete: null,

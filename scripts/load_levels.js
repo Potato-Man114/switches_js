@@ -7,7 +7,7 @@ MyGame.levels = (function() {
             if (asset_name.startsWith("level_game")) {
                 levels["game_levels"].push(MyGame.assets[asset_name]);
             }
-            if (asset_name.startsWitch("level_test")) {
+            if (asset_name.startsWith("level_test")) {
                 levels["test_levels"].push(MyGame.assets[asset_name]);
             }
         }

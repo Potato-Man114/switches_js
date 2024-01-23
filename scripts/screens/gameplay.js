@@ -38,12 +38,9 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
     }
 
     function run() {
-        //TODO: actually load level data
-        model = GameModel(
-            MyGame.levels[0] //TODO: this is temporary for testing level loading.
-        ); 
-            
-        //TODO: keboard command to return to main menu.
+        model = GameModel(MyGame.levels[MyGame.activeLevelType][MyGame.activeLevel]);
+        
+        keyboard.registerCommand("Escape", returnToMainMenu); 
 
         cancelNextRequest = false;
         previousTimeStamp = performance.now();
