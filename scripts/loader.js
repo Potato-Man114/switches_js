@@ -281,6 +281,14 @@ MyGame.loader = (function() {
             key: 'lock_yellow',
             source: '/assets/images/LOCK_YELLOW.png'
         }, 
+        {
+            key: 'goal_annotation_on',
+            source: '/assets/images/GOAL_ANNOTATION_ON.png'
+        },
+        {
+            key: 'goal_annotation_off',
+            source: '/assets/images/GOAL_ANNOTATION_OFF.png'
+        },
         
         // levels
         {

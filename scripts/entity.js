@@ -91,7 +91,19 @@ let EntityFactory = (function() {
         }
         entity.addComponent(MyGame.components.Activateable(attributes.is_on));
         if (attributes.is_goal) {
-            entity.addComponent(MyGame.components.Goal());
+            let spriteSize = MyGame.utils.getSpriteSize(gridSize);
+            spriteSize.width /= 4;
+            spriteSize.height /= 4;
+            let mainSize = MyGame.utils.getSpriteSize(gridSize);
+            let spriteCenter = MyGame.utils.gridPositionToPixelPosition(attributes.pos, gridSize).center;
+            spriteCenter.x += mainSize.width / 2 - spriteSize.width / 2 - (mainSize.width * (2/28));
+            spriteCenter.y -= mainSize.width / 2 - spriteSize.width / 2 - (mainSize.height * (2/28));
+            entity.addComponent(MyGame.components.Goal({
+                image: MyGame.assets[attributes.is_on ? "goal_annotation_on" : "goal_annotation_off"],
+                ready: true,
+                spriteSize: spriteSize,
+                spriteCenter: spriteCenter
+            }));
         }
         if (attributes.clickable) {
             entity.addComponent(MyGame.components.Clickable());
