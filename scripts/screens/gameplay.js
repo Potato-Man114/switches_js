@@ -17,12 +17,25 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
         keyboard.unregisterCommand("Escape");
         //TODO: something with the mouse?
         //stop audio.
+
+        remove_subscriptions();
+    }
+
+    function remove_subscriptions() {
+        for (let system in MyGame.systems) {
+            if (Object.keys(MyGame.systems[system]).includes("remove")) {
+                MyGame.systems[system].remove();
+            }
+        }
     }
 
     function update(elapsedTime) {
         keyboard.update(elapsedTime);
         //TODO: mouse as well?
-        model.update(elapsedTime);        
+        let wonLevel = model.update(elapsedTime);
+        if (wonLevel) {
+            returnToMainMenu();
+        }        
     }
 
     function gameLoop(time) {
