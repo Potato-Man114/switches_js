@@ -22,7 +22,10 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
     function update(elapsedTime) {
         keyboard.update(elapsedTime);
         //TODO: mouse as well?
-        model.update(elapsedTime);        
+        let wonLevel = model.update(elapsedTime);
+        if (wonLevel) {
+            returnToMainMenu();
+        }        
     }
 
     function gameLoop(time) {

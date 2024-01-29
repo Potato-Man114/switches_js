@@ -3,6 +3,7 @@ MyGame.constants = {};
 MyGame.constants.Events = Object.freeze({
     mouseDown: "mouseDown",
     switchUpdated: "switchUpdated",
+    win: "win",
 });
 
 MyGame.constants.SwitchTypes = Object.freeze({
