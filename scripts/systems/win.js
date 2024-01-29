@@ -2,17 +2,17 @@ MyGame.systems.Win = (function() {
     'use strict';
 
     let updatedSwitches = [];
+    let unsubscribe_functions = [];
 
     function switchUpdated(entity) {
         updatedSwitches.push(entity);
     }
 
     function initialize() {
-        MyGame.pubsub.subscribe(MyGame.constants.Events.switchUpdated, (data) => switchUpdated(data));
+        unsubscribe_functions.push(MyGame.pubsub.subscribe(MyGame.constants.Events.switchUpdated, (data) => switchUpdated(data)).unsubscribe);
     }
 
     function update(elapsedTime, entities) {
-        //TODO: this.
         if (updatedSwitches.length == 0) {
             return;
         }   
@@ -29,16 +29,23 @@ MyGame.systems.Win = (function() {
             } 
         }
         //publish "win" signal if allGoalsOn == true
-        if (allGoalsOn) {
+        if (atLeastOneGoal && allGoalsOn) {
             MyGame.pubsub.publish(MyGame.constants.Events.win, undefined);
         }
 
         updatedSwitches.length = 0;
     }
-    
+
+    function remove() {
+        for (let i = 0; i < unsubscribe_functions.length; i++) {
+            unsubscribe_functions[i]();
+        }
+    }
+
       return {
         update,
-        initialize
+        initialize,
+        remove
       }
     
     

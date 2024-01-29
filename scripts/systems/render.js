@@ -19,7 +19,7 @@ MyGame.systems.Render = (function(graphics) {
     // function sortEntitiesByLayer(entities) {
     //   entities.sort(sortLayer);
     // }
-  
+
     function update(elapsedTime, entities) {
       MyGame.graphics.clear();
       MyGame.render.background(graphics);
@@ -30,8 +30,8 @@ MyGame.systems.Render = (function(graphics) {
       MyGame.systems.RenderSprite.update(elapsedTime, entities);
     //   MyGame.systems.RenderParticleSystem.update(elapsedTime, MyGame.particleSystems);
     }
-  
+
     return {
-      update
+      update,
     };
   }(MyGame.graphics))

@@ -1,6 +1,7 @@
 MyGame.systems.ToggleSwitches = (function() {
 
     let clicked_positions = [];
+    let unsubscribe_functions = [];
 
     function on_click(position) {
         let pos = MyGame.utils.viewPortPositionToPixelPosition(position);
@@ -10,7 +11,7 @@ MyGame.systems.ToggleSwitches = (function() {
     }
 
     function initialize() {
-        MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => on_click(data));
+        unsubscribe_functions.push(MyGame.pubsub.subscribe(MyGame.constants.Events.mouseDown, (data) => on_click(data)).unsubscribe);
     }
 
     function get_adjacent_switches(current_switch, entities) {
@@ -179,9 +180,16 @@ MyGame.systems.ToggleSwitches = (function() {
         clicked_positions.length = 0;
     }
 
+    function remove() {
+        for (let i = 0; i < unsubscribe_functions.length; i++) {
+            unsubscribe_functions[i]();
+        }
+    }
+
     return {
         initialize,
-        update
+        update,
+        remove,
     };
 
 }());

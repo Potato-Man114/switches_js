@@ -51,9 +51,7 @@ function GameModel(level_data) {
     }
 
     function update(elapsedTime) {
-        // console.log("update is working.");
         //It's update, it goes through the updates of each of the systems in the correct order.
-        //Make sure the pubsub model is levereged.
         if (!won) {
             MyGame.systems.Input.update(elapsedTime, entities);
             MyGame.systems.ToggleSwitches.update(elapsedTime, entities, level_data.size);
