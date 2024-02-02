@@ -52,4 +52,5 @@ MyGame.utils.Random = (function() {
   }
 
   return that;
+  
 }());

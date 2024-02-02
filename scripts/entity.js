@@ -50,8 +50,8 @@ let EntityFactory = (function() {
         entity.addComponent(MyGame.components.Sprite({
             image: MyGame.assets["normal-off"],
             ready: true,
-            spriteSize: MyGame.utils.getSpriteSize(gridSize),
-            spriteCenter: MyGame.utils.gridPositionToPixelPosition(position, gridSize).center,
+            spriteSize: MyGame.utils.misc.getSpriteSize(gridSize),
+            spriteCenter: MyGame.utils.misc.gridPositionToPixelPosition(position, gridSize).center,
         }));
         return entity;
     }
@@ -79,8 +79,8 @@ let EntityFactory = (function() {
             entity.addComponent(MyGame.components.Sprite({
                 image: MyGame.assets[sprite_name],
                 ready: true,
-                spriteSize: MyGame.utils.getSpriteSize(gridSize),
-                spriteCenter: MyGame.utils.gridPositionToPixelPosition(attributes.pos, gridSize).center,
+                spriteSize: MyGame.utils.misc.getSpriteSize(gridSize),
+                spriteCenter: MyGame.utils.misc.gridPositionToPixelPosition(attributes.pos, gridSize).center,
             }));
         }
         else {
@@ -91,11 +91,11 @@ let EntityFactory = (function() {
         }
         entity.addComponent(MyGame.components.Activateable(attributes.is_on));
         if (attributes.is_goal) {
-            let spriteSize = MyGame.utils.getSpriteSize(gridSize);
+            let spriteSize = MyGame.utils.misc.getSpriteSize(gridSize);
             spriteSize.width /= 4;
             spriteSize.height /= 4;
-            let mainSize = MyGame.utils.getSpriteSize(gridSize);
-            let spriteCenter = MyGame.utils.gridPositionToPixelPosition(attributes.pos, gridSize).center;
+            let mainSize = MyGame.utils.misc.getSpriteSize(gridSize);
+            let spriteCenter = MyGame.utils.misc.gridPositionToPixelPosition(attributes.pos, gridSize).center;
             spriteCenter.x += mainSize.width / 2 - spriteSize.width / 2 - (mainSize.width * (2/28));
             spriteCenter.y -= mainSize.width / 2 - spriteSize.width / 2 - (mainSize.height * (2/28));
             entity.addComponent(MyGame.components.Goal({

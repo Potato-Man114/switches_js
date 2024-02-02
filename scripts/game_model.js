@@ -3,7 +3,7 @@ function GameModel(level_data) {
 
     let entities = [];
     let won = false;
-    let afterWinTimer = 1000;
+    let afterWinTimer = 1500;
 
     function initializeLevel(level_data) {
         entities.length = 0;
@@ -55,7 +55,7 @@ function GameModel(level_data) {
         if (!won) {
             MyGame.systems.Input.update(elapsedTime, entities);
             MyGame.systems.ToggleSwitches.update(elapsedTime, entities, level_data.size);
-            MyGame.systems.Win.update(elapsedTime, entities);
+            MyGame.systems.Win.update(elapsedTime, entities, level_data.size);
         }
         else {
             afterWinTimer -= elapsedTime;

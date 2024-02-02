@@ -24,8 +24,8 @@ MyGame.systems.SwitchSprite = (function() {
                 updatedSwitch.addComponent(MyGame.components.Sprite({
                     image: MyGame.assets[spriteName],
                     ready: true,
-                    spriteSize: MyGame.utils.getSpriteSize(gridSize),
-                    spriteCenter: MyGame.utils.gridPositionToPixelPosition(
+                    spriteSize: MyGame.utils.misc.getSpriteSize(gridSize),
+                    spriteCenter: MyGame.utils.misc.gridPositionToPixelPosition(
                         {x: updatedSwitch.components.position.x, y: updatedSwitch.components.position.y}, gridSize
                         ).center,
                 }));
@@ -34,11 +34,11 @@ MyGame.systems.SwitchSprite = (function() {
                 console.log("No matching sprite: " + spriteName);
             }
             if (updatedSwitch.components.goal) {
-                let spriteSize = MyGame.utils.getSpriteSize(gridSize);
+                let spriteSize = MyGame.utils.misc.getSpriteSize(gridSize);
                 spriteSize.width /= 4;
                 spriteSize.height /= 4;
-                let mainSize = MyGame.utils.getSpriteSize(gridSize);
-                let spriteCenter = MyGame.utils.gridPositionToPixelPosition(updatedSwitch.components.position, gridSize).center;
+                let mainSize = MyGame.utils.misc.getSpriteSize(gridSize);
+                let spriteCenter = MyGame.utils.misc.gridPositionToPixelPosition(updatedSwitch.components.position, gridSize).center;
                 spriteCenter.x += mainSize.width / 2 - spriteSize.width / 2 - (mainSize.width * (2/28));
                 spriteCenter.y -= mainSize.width / 2 - spriteSize.width / 2 - (mainSize.height * (2/28));
 

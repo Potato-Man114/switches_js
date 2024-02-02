@@ -17,7 +17,7 @@ MyGame.screens['gameplay'] = (function(screenManager, graphics, input) {
         keyboard.unregisterCommand("Escape");
         //TODO: something with the mouse?
         //stop audio.
-
+        MyGame.particleSystems.length = 0;
         remove_subscriptions();
     }
 

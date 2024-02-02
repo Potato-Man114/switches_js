@@ -1,5 +1,5 @@
 //miscelaneous utility functions.
-MyGame.utils = (function() {
+MyGame.utils.misc = (function() {
 
   let that = {};
 

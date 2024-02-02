@@ -4,7 +4,7 @@ MyGame.systems.ToggleSwitches = (function() {
     let unsubscribe_functions = [];
 
     function on_click(position) {
-        let pos = MyGame.utils.viewPortPositionToPixelPosition(position);
+        let pos = MyGame.utils.misc.viewPortPositionToPixelPosition(position);
         if (pos != undefined) {
             clicked_positions.push(pos);
         }
@@ -163,7 +163,7 @@ MyGame.systems.ToggleSwitches = (function() {
 
     function update(elapsedTime, entities, gridSize) {
         for (let i = 0; i < clicked_positions.length; i++) {
-            let clicked_pos = MyGame.utils.pixelPositionToGridPosition(clicked_positions[i], gridSize);
+            let clicked_pos = MyGame.utils.misc.pixelPositionToGridPosition(clicked_positions[i], gridSize);
             for (let j = 0; j < entities.length; j++) {
                 let entity = entities[j];
                 if (!(entity.components.position && entity.components.clickable && entity.components.activateable)) {
