@@ -13,12 +13,13 @@ MyGame.loader = (function() {
         // -- utils --
         {
             scripts: [
+                'scripts/utils/utils.js',
                 'scripts/utils/lodash.js',
                 'scripts/utils/random.js',
                 'scripts/utils/input.js',
-                'scripts/utils/utils.js',
                 'scripts/utils/pubsub.js',
                 'scripts/utils/constants.js',
+                'scripts/utils/particleSystem.js',
             ],
             message: "utils loaded",
             onComplete: null
@@ -64,7 +65,8 @@ MyGame.loader = (function() {
                 'scripts/systems/input.js',
                 'scripts/systems/toggle_switches.js',
                 'scripts/systems/switch_sprite.js',
-                'scripts/systems/win.js'
+                'scripts/systems/win.js',
+                'scripts/systems/renderParticleSystem.js',
             ],
             message: "entity.js loaded",
             onComplete: null
@@ -107,136 +109,157 @@ MyGame.loader = (function() {
         // images
         {
             key: 'cascade_off_clickable',
-            source: '/assets/images/CASCADE_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/CASCADE_OFF_CLICKABLE.png'
         }, 
         {
             key: 'cascade_off',
-            source: '/assets/images/CASCADE_OFF.png'
+            source: '/assets/images/switches/CASCADE_OFF.png'
         }, 
         {
             key: 'cascade_on_clickable',
-            source: '/assets/images/CASCADE_ON_CLICKABLE.png'
+            source: '/assets/images/switches/CASCADE_ON_CLICKABLE.png'
         }, 
         {
             key: 'cascade_on',
-            source: '/assets/images/CASCADE_ON.png'
+            source: '/assets/images/switches/CASCADE_ON.png'
         }, 
         {
             key: 'directional_down_off_clickable',
-            source: '/assets/images/DIRECTIONAL_DOWN_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_DOWN_OFF_CLICKABLE.png'
         }, 
         {
             key: 'directional_down_off',
-            source: '/assets/images/DIRECTIONAL_DOWN_OFF.png'
+            source: '/assets/images/switches/DIRECTIONAL_DOWN_OFF.png'
         }, 
         {
             key: 'directional_down_on_clickable',
-            source: '/assets/images/DIRECTIONAL_DOWN_ON_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_DOWN_ON_CLICKABLE.png'
         }, 
         {
             key: 'directional_down_on',
-            source: '/assets/images/DIRECTIONAL_DOWN_ON.png'
+            source: '/assets/images/switches/DIRECTIONAL_DOWN_ON.png'
         }, 
          
         {
             key: 'directional_left_off_clickable',
-            source: '/assets/images/DIRECTIONAL_LEFT_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_LEFT_OFF_CLICKABLE.png'
         }, 
         {
             key: 'directional_left_off',
-            source: '/assets/images/DIRECTIONAL_LEFT_OFF.png'
+            source: '/assets/images/switches/DIRECTIONAL_LEFT_OFF.png'
         }, 
         {
             key: 'directional_left_on_clickable',
-            source: '/assets/images/DIRECTIONAL_LEFT_ON_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_LEFT_ON_CLICKABLE.png'
         }, 
         {
             key: 'directional_left_on',
-            source: '/assets/images/DIRECTIONAL_LEFT_ON.png'
+            source: '/assets/images/switches/DIRECTIONAL_LEFT_ON.png'
         }, 
          
         {
             key: 'directional_right_off_clickable',
-            source: '/assets/images/DIRECTIONAL_RIGHT_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_RIGHT_OFF_CLICKABLE.png'
         }, 
         {
             key: 'directional_right_off',
-            source: '/assets/images/DIRECTIONAL_RIGHT_OFF.png'
+            source: '/assets/images/switches/DIRECTIONAL_RIGHT_OFF.png'
         }, 
         {
             key: 'directional_right_on_clickable',
-            source: '/assets/images/DIRECTIONAL_RIGHT_ON_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_RIGHT_ON_CLICKABLE.png'
         }, 
         {
             key: 'directional_right_on',
-            source: '/assets/images/DIRECTIONAL_RIGHT_ON.png'
+            source: '/assets/images/switches/DIRECTIONAL_RIGHT_ON.png'
         }, 
          
         {
             key: 'directional_up_off_clickable',
-            source: '/assets/images/DIRECTIONAL_UP_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_UP_OFF_CLICKABLE.png'
         }, 
         {
             key: 'directional_up_off',
-            source: '/assets/images/DIRECTIONAL_UP_OFF.png'
+            source: '/assets/images/switches/DIRECTIONAL_UP_OFF.png'
         }, 
         {
             key: 'directional_up_on_clickable',
-            source: '/assets/images/DIRECTIONAL_UP_ON_CLICKABLE.png'
+            source: '/assets/images/switches/DIRECTIONAL_UP_ON_CLICKABLE.png'
         }, 
         {
             key: 'directional_up_on',
-            source: '/assets/images/DIRECTIONAL_UP_ON.png'
+            source: '/assets/images/switches/DIRECTIONAL_UP_ON.png'
         }, 
 
         {
             key: 'distance_off_clickable',
-            source: '/assets/images/DISTANCE_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/DISTANCE_OFF_CLICKABLE.png'
         }, 
         {
             key: 'distance_off',
-            source: '/assets/images/DISTANCE_OFF.png'
+            source: '/assets/images/switches/DISTANCE_OFF.png'
         }, 
         {
             key: 'distance_on_clickable',
-            source: '/assets/images/DISTANCE_ON_CLICKABLE.png'
+            source: '/assets/images/switches/DISTANCE_ON_CLICKABLE.png'
         }, 
         {
             key: 'distance_on',
-            source: '/assets/images/DISTANCE_ON.png'
+            source: '/assets/images/switches/DISTANCE_ON.png'
         }, 
         {
             key: 'goal_off_clickable',
-            source: '/assets/images/GOAL_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/GOAL_OFF_CLICKABLE.png'
         }, 
         {
             key: 'goal_off',
-            source: '/assets/images/GOAL_OFF.png'
+            source: '/assets/images/switches/GOAL_OFF.png'
         }, 
         {
             key: 'goal_on_clickable',
-            source: '/assets/images/GOAL_ON_CLICKABLE.png'
+            source: '/assets/images/switches/GOAL_ON_CLICKABLE.png'
         }, 
         {
             key: 'goal_on',
-            source: '/assets/images/GOAL_ON.png'
+            source: '/assets/images/switches/GOAL_ON.png'
         }, 
         {
             key: 'normal_off_clickable',
-            source: '/assets/images/NORMAL_OFF_CLICKABLE.png'
+            source: '/assets/images/switches/NORMAL_OFF_CLICKABLE.png'
         }, 
         {
             key: 'normal_off',
-            source: '/assets/images/NORMAL_OFF.png'
+            source: '/assets/images/switches/NORMAL_OFF.png'
         }, 
         {
             key: 'normal_on_clickable',
-            source: '/assets/images/NORMAL_ON_CLICKABLE.png'
+            source: '/assets/images/switches/NORMAL_ON_CLICKABLE.png'
         }, 
         {
             key: 'normal_on',
-            source: '/assets/images/NORMAL_ON.png'
+            source: '/assets/images/switches/NORMAL_ON.png'
         }, 
+        //-----------------------------------
+        {
+            key: 'blue-particle',
+            source: '/assets/images/particles/blue-particle.png'
+        },
+        {
+            key: 'green-particle',
+            source: '/assets/images/particles/green-particle.png'
+        },
+        {
+            key: 'purple-particle',
+            source: '/assets/images/particles/purple-particle.png'
+        },
+        {
+            key: 'red-particle',
+            source: '/assets/images/particles/red-particle.png'
+        },
+        {
+            key: 'yellow-particle',
+            source: '/assets/images/particles/yellow-particle.png'
+        },
         //-----------------------------------
         {
             key: 'wall',

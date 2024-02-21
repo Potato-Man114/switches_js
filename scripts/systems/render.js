@@ -28,7 +28,7 @@ MyGame.systems.Render = (function(graphics) {
   
     //   MyGame.systems.RenderAnimatedSprite.update(elapsedTime, entities);
       MyGame.systems.RenderSprite.update(elapsedTime, entities);
-    //   MyGame.systems.RenderParticleSystem.update(elapsedTime, MyGame.particleSystems);
+      MyGame.systems.RenderParticleSystem.update(elapsedTime, MyGame.particleSystems);
     }
 
     return {

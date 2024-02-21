@@ -21,3 +21,10 @@ MyGame.constants.Directions = Object.freeze({
     DOWN: "DOWN",
 });
 
+MyGame.constants.ParticleEffectPlacements = Object.freeze({
+    centered: 0,
+    rectBorder: 1,
+    rectArea: 2,
+    circularArea: 3
+});
+
