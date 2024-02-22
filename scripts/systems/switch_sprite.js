@@ -48,6 +48,13 @@ MyGame.systems.SwitchSprite = (function() {
                     spriteSize: spriteSize,
                     spriteCenter: spriteCenter
                 }));
+                if (updatedSwitch.components.activateable.active) {
+                    MyGame.particleSystems.push(
+                        ...MyGame.utils.ParticleSystemFactory.activateWinSwitchEffect(
+                            [updatedSwitch.components.position], gridSize,
+                        )
+                    );
+                }
             }
         }
         updatedSwitches.length = 0;

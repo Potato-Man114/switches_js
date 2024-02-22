@@ -140,8 +140,27 @@ MyGame.utils.ParticleSystemFactory = (function() {
 
     let that = {};
     
-    that.activateSwitchEffect = function(positions, gridSize) {
-
+    that.activateWinSwitchEffect = function(positions, gridSize) {
+        let systems = [];
+        for (let position of positions) {
+            systems.push(
+                MyGame.utils.ParticleSystem(
+                    {
+                        center: MyGame.utils.misc.gridPositionToPixelPosition(position, gridSize).center,
+                        size: {mean: 3, stdev: 3},
+                        speed: {mean: 5, stdev: 5},
+                        lifetime: {mean: 0.25, stdev: 0.05},
+                        images: [
+                        MyGame.assets['green-particle'],
+                        ],
+                        count: 500,
+                        borderDimensions: MyGame.utils.misc.getSpriteSize(gridSize),
+                    }, 
+                MyGame.constants.ParticleEffectPlacements.rectBorder
+                )
+            )
+        }
+        return systems;
     }
 
     that.deactivateSwitchEffect = function(positions, gridSize) {
@@ -159,10 +178,6 @@ MyGame.utils.ParticleSystemFactory = (function() {
                         speed: {mean: 300, stdev: 30},
                         lifetime: {mean: 3, stdev: 0.25},
                         images: [
-                        // MyGame.assets['blue-particle'],
-                        // MyGame.assets['red-particle'],
-                        // MyGame.assets['yellow-particle'],
-                        // MyGame.assets['purple-particle'],
                         MyGame.assets['green-particle'],
                         ],
                         count: 250,
