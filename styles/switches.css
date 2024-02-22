@@ -40,31 +40,66 @@ ul.menu li {
   margin: 0.8em 0;
 }
 
-ul.menu li button {
-  font-family: Arial, sans-serif;
-  font-size: 0.6em;
-  color: #000000;
-  width: 10em;
-  height: 1.5em;
+#level-select-back-button {
   background: #5199f1;
+  color: #000000;
+}
+
+#level-select-back-button:hover {
+  background: #dbdbff;
+}
+
+ul.menu li #level-select-button {
+  font-size: 1em;
+  color: #000000;
+  width: 12em;
+  height: 12em;
+  background: #078c3e;
+  border: 0.4em solid #058798;
+  border-radius: 0.25em;
+  box-shadow: 0.2em 0.2em 0.3em #000000;
+}
+
+#game #level-select h1 {
+  font-size: 1.5em;
+}
+
+ul.menu li #level-select-button:hover {
+  background: #1dd56a;
+  border: 0.4em solid #06bcd4;
+}
+
+ul.menu li button {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.75em;
+  color: #f3f3f3;
+  width: 11em;
+  height: 2em;
+  background: #ae0cff;
   border: 0.1em solid rgb(0, 2, 148);
   border-radius: 0.5em;
   box-shadow: 0.2em 0.2em 0.3em rgb(0, 0, 0);
+  margin-top: 0.5em;
 }
 
 ul.menu li button:hover {
-  background: #dbdbff;
+  background: #e064ff;
 }
 
 ul.menu li button:active {
   color: #000000;
-  background: rgb(255, 255, 255);
+  background: rgb(168, 232, 255);
+}
+
+#title {
+  font-size: 3em;
 }
 
 #game div h1 {
-  font-size: 1em;
+  /* font-size: 1em; */
   text-align: center;
 }
+
 
 #game div p {
   font-size: 0.5em;
