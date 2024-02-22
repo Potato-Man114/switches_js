@@ -314,7 +314,7 @@ MyGame.loader = (function() {
             source: '/assets/images/GOAL_ANNOTATION_OFF.png'
         },
         
-        // levels
+        // levels ------------------------------------------
         {
             key: 'level_test_1',
             source: '/assets/levels/test_levels/test_1.json'
@@ -338,6 +338,27 @@ MyGame.loader = (function() {
         {
             key: 'level_test_goals',
             source: '/assets/levels/test_levels/test_goals.json'
+        },
+
+        {
+            key: 'game_level_1',
+            source: '/assets/levels/game_levels/level_1.json'
+        },
+        {
+            key: 'game_level_2',
+            source: '/assets/levels/game_levels/level_2.json'
+        },
+        {
+            key: 'game_level_3',
+            source: '/assets/levels/game_levels/level_3.json'
+        },
+        {
+            key: 'game_level_4',
+            source: '/assets/levels/game_levels/level_4.json'
+        },
+        {
+            key: 'game_level_5',
+            source: '/assets/levels/game_levels/level_5.json'
         }
     ];
 

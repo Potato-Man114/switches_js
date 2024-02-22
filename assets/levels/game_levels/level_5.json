@@ -1,0 +1,16 @@
+{
+    "size": {"x": 10, "y": 10},
+    "name": "Level 5",
+    "objects": [
+        {
+            "type": "SWITCH",
+            "attributes": {
+                "pos": {"x": 1, "y": 0},
+                "is_on": false,
+                "is_goal": false,
+                "switch_type": "CASCADE",
+                "clickable": true
+            }
+        }
+    ]
+}
