@@ -5,6 +5,8 @@ function GameModel(level_data) {
     let won = false;
     let afterWinTimer = 1500;
 
+    let unsubscribe_functions = [];
+
     function initializeLevel(level_data) {
         entities.length = 0;
         for (var object of level_data["objects"]) {
@@ -22,22 +24,30 @@ function GameModel(level_data) {
                 entities.push(entity);
             }
         }
-        //subscribe to win event
-        MyGame.pubsub.subscribe(MyGame.constants.Events.win, () => won = true);
-
-        // entities.push(EntityFactory.createNormalSwitch({x: 4, y: 4}, level_data.size, false));
-
-        //initialize any systems that have an "initialize" method
-        // for (system of MyGame.systems) {
-        //     if (Object.keys(system).includes("initialize")) {
-        //         system.initialize();
-        //     }
-        // }
 
     }
 
+    function clear() {
+        for (let system in MyGame.systems) {
+            if (Object.keys(MyGame.systems[system]).includes("remove")) {
+                MyGame.systems[system].remove();
+            }
+        }
+        MyGame.particleSystems.length = 0;
+        entities.length = 0;
+    }
+
     function resetLevel() {
-        initializeLevel(level_data);
+        console.log("here");
+        clear();
+        initialize();
+    }
+    function subscribe_to_events() {
+        
+        //subscribe to win event
+        unsubscribe_functions.push(MyGame.pubsub.subscribe(MyGame.constants.Events.win, () => won = true).unsubscribe);
+        //subscribe to reset event
+        unsubscribe_functions.push(MyGame.pubsub.subscribe(MyGame.constants.Events.reset, resetLevel).unsubscribe);
     }
 
     function initialize() {
@@ -70,7 +80,8 @@ function GameModel(level_data) {
     }
 
     initialize();
-
+    subscribe_to_events();
+    
     return {
         update,
     };
