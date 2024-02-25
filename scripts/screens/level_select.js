@@ -9,7 +9,7 @@ MyGame.screens['level-select'] = (function (screenManager) {
         );
 
         let list = document.getElementById("level-select-menu");
-
+        console.log(MyGame.levels)
         for (let i = 0; i < MyGame.levels["game_levels"].length; i++) {
             let li = document.createElement("li");
             let button = document.createElement("button");

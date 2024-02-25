@@ -1,0 +1,221 @@
+{
+    "size": {"x": 7, "y": 7},
+    "name": "Long Range",
+    "objects": [
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 0}, "is_on": false, "is_goal": true, "switch_type": "DISTANCE", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "DIRECTIONAL", "clickable": true, "direction": "DOWN"}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 0}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+
+
+
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 1}, "is_on": true, "is_goal": true, "switch_type": "DISTANCE", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 1}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+
+
+
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 2}, "is_on": true, "is_goal": true, "switch_type": "DISTANCE", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 2}, "is_on": false, "is_goal": false, "switch_type": "DIRECTIONAL", "clickable": true, "direction": "LEFT"}
+        },
+
+
+
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "DIRECTIONAL", "clickable": true, "direction": "DOWN"}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 3}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 3}, "is_on": false, "is_goal": true, "switch_type": "NORMAL", "clickable": false}
+        },
+
+
+
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 4}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 4}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 4}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 4}, "is_on": true, "is_goal": true, "switch_type": "DISTANCE", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 4}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 4}, "is_on": false, "is_goal": true, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 4}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+
+
+
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 5}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 5}, "is_on": false, "is_goal": true, "switch_type": "DISTANCE", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 5}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 5}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 5}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 5}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 5}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+
+
+
+
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 0, "y": 6}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 1, "y": 6}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 2, "y": 6}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 3, "y": 6}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 4, "y": 6}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 5, "y": 6}, "is_on": false, "is_goal": true, "switch_type": "DISTANCE", "clickable": true}
+        },
+        {
+            "type": "SWITCH",
+            "attributes": {"pos": {"x": 6, "y": 6}, "is_on": false, "is_goal": false, "switch_type": "NORMAL", "clickable": false}
+        }
+    ]
+}

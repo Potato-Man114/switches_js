@@ -15,6 +15,9 @@ MyGame.pubsub = (function() {
       let index = subscribers[event].push(callback) - 1;
       return {
         unsubscribe() {
+          console.log("unsub");
+          console.log(index);
+          console.log(subscribers[event][index]);
           subscribers[event].splice(index, 1);
         }
       };

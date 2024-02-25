@@ -59,6 +59,7 @@ MyGame.systems.Win = (function() {
         for (let i = 0; i < unsubscribe_functions.length; i++) {
             unsubscribe_functions[i]();
         }
+        unsubscribe_functions.length = 0;
     }
 
       return {
